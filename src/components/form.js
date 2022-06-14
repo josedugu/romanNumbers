@@ -38,7 +38,6 @@ function FormConverter() {
     }
   }
 
-
   return (
     <Col>
       <Form onSubmit={e => convert(e)}>
