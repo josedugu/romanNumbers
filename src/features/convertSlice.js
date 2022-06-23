@@ -27,7 +27,7 @@ export const convertSlice = createSlice({
         C:0,
         D:0,
         M:0,
-    }
+      }
       let counterValues = 0
       let wrongNumber = []
 
@@ -74,13 +74,16 @@ export const convertSlice = createSlice({
       //If the roman number is correct and does not include substractions, go to sum all numbers
       for (let i = 0; i < romNumbers.length; i++) {
         result += romNumbers[i]
-        if(romNumbers[i]>=romNumbers[i +1]){return result}
+        if(romNumbers[i]>=romNumbers[i +1]){
+          result += 0;
+        }
       // when there is a low number before a bigger number ex: IV
         if(romNumbers[i]<romNumbers[i +1]){
-          return result - romNumbers[i] -romNumbers[i]
+          result = result - romNumbers[i] -romNumbers[i]
         }
-        } 
-      },
+      } 
+      state.value = result;
+    },
     
 
       
