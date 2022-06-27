@@ -127,7 +127,7 @@ export const convertSlice = createSlice({
             for ( const [key, value] of Object.entries(romanUnits)){
                 if (value == arrNumber[0]){romanNumber.push(key);}}
                 result= romanNumber[0]
-                return result
+                
             }
         if(size === 2){
             arrNumber[0] = arrNumber[0]*10
@@ -136,7 +136,7 @@ export const convertSlice = createSlice({
             for ( const [key, value] of Object.entries(romanUnits)){
                 if (value == arrNumber[1]){romanNumber.push(key);}}
                 result= romanNumber[0] + romanNumber[1];
-                return result
+                
             }
         
         if(size === 3){
@@ -149,7 +149,7 @@ export const convertSlice = createSlice({
             for ( const [key, value] of Object.entries(romanUnits)){
                 if (value == arrNumber[2]){romanNumber.push(key);}}
                 result= romanNumber[0] + romanNumber[1]+romanNumber[2];
-                return result
+                
                 }
         
         if(size === 4){
@@ -165,9 +165,10 @@ export const convertSlice = createSlice({
             for ( const [key, value] of Object.entries(romanUnits)){
                 if (value == arrNumber[3]){romanNumber.push(key);}}
                 result= romanNumber[0] + romanNumber[1]+romanNumber[2]+ romanNumber[3];
-                return result
+                
                         }
-      } 
+            state.value = result;
+       } 
     } 
 })
 
